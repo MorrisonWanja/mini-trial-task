@@ -5,7 +5,6 @@ import java.time.LocalDateTime;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotEmpty;
 
-
 @Entity
 @Table(name = "branches")
 public class Branches {

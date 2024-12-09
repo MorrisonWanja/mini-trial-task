@@ -24,7 +24,6 @@ public class PayPalService {
     private APIContext getAPIContext() {
         return new APIContext(clientId, clientSecret, mode);
     }
-
     // Create a payment with PayPal
     public Payment createPayment(Double totalAmount, String currency, String description) throws PayPalRESTException {
         Amount amount = new Amount();
@@ -49,6 +48,7 @@ public class PayPalService {
         return payment.create(getAPIContext());
     }
 
+    
     // Execute the payment after the user approves it
     public Payment executePayment(String paymentId, String payerId) throws PayPalRESTException {
         Payment payment = new Payment();

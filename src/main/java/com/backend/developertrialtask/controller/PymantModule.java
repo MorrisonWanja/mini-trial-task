@@ -28,6 +28,7 @@ public class PymantModule {
         if ("Starter".equals(tier)) basePrice = 1;
         else if ("Pro".equals(tier)) basePrice = 3;
         else if ("Enterprise".equals(tier)) basePrice = 5;
+        
 
         // Calculate total price
         totalPrice = basePrice + (branches > 1 ? (branches - 1) * additionalBranchPrice : 0);
@@ -37,6 +38,7 @@ public class PymantModule {
 
         return "Payment created. Approve the payment here: " + payment.getLinks().get(1).getHref();
     }
+    
 
     @GetMapping("/success")
     public String successPay(@RequestParam("paymentId") String paymentId, @RequestParam("PayerID") String payerId) {
